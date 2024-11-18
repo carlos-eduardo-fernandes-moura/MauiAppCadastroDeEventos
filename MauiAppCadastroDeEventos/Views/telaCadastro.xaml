@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppCadastroDeEventos.Views.telaCadastro"
+             Title=""
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White">
+    
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+        <Label Text="Cadastro de Eventos"
+               TextColor="Black"
+               FontSize="35"
+               HorizontalOptions="CenterAndExpand"
+               FontFamily="OpenSansSemibold"/>
+
+        <Frame BackgroundColor="White"
+               BorderColor="White">
+            <VerticalStackLayout>
+                <Label Text="Qual vai ser nome do seu evento?"
+                       TextColor="Black"
+                       HorizontalOptions="Start"
+                       FontSize="20"/>
+
+                <Entry x:Name="txt_nomeEvento"
+                       TextColor="Black"
+                       BackgroundColor="WhiteSmoke"/>
+
+                <Label Text="Escolha o local para o evento"
+                       TextColor="Black"
+                       FontSize="20"/>
+
+                <Picker x:Name="pck_localEvento"
+                        BackgroundColor="WhiteSmoke"
+                        TextColor="Black"
+                        ItemDisplayBinding="{Binding nome}"/>
+
+                
+
+                <Label Text="Qual é a quantidade de convidados?"
+                       TextColor="Black"
+                       FontSize="20"/>
+
+                <Entry x:Name="txt_quantidadeConvidados"
+                       TextColor="Black"
+                       BackgroundColor="WhiteSmoke"
+                       TextChanged="txt_quantidadeConvidados_TextChanged"/>
+
+                <Label Text="Haverá bebida alcólica no evento?"
+                       TextColor="Black"
+                       FontSize="20"/>
+
+                <Picker x:Name="pck_bebidaAlcolica"
+                        BackgroundColor="WhiteSmoke"
+                        TextColor="Black"/>
+
+                <HorizontalStackLayout HorizontalOptions="Center"
+                                       Margin="5">
+
+                    <Label Text="Data de início"
+                           HorizontalOptions="Center"
+                           Margin="10"
+                           TextColor="Black"
+                           FontSize="20"/>
+
+                    <Label Text="Data de término"
+                           Margin="10"
+                           HorizontalOptions="Center"  
+                           TextColor="Black"
+                           FontSize="20"/>
+
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="Center"
+                                       Margin="5">
+
+                    <DatePicker x:Name="dtpck_inicio"
+                                Format="dd/MM/yyyy"
+                                BackgroundColor="WhiteSmoke"
+                                Margin="15"
+                                HorizontalOptions="Center"
+                                TextColor="Black"
+                                DateSelected="dtpck_inicio_DateSelected"/>
+
+                    <DatePicker x:Name="dtpck_final"                                
+                                Format="dd/MM/yyyy"
+                                BackgroundColor="WhiteSmoke"
+                                Margin="15"
+                                HorizontalOptions="Center"
+                                TextColor="Black"/>
+
+                </HorizontalStackLayout>
+
+                <Button Text="Avançar"
+                        BackgroundColor="White"
+                        BorderColor="black"
+                        BorderWidth="1"
+                        HorizontalOptions="Center"
+                        Clicked="Button_Clicked"/>
+
+            </VerticalStackLayout>
+        </Frame>
+
+    </VerticalStackLayout>
+</ContentPage>
